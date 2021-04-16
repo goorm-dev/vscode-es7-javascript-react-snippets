@@ -77,11 +77,19 @@
   "scripts": {
     "vscode:prepublish": "yarn run compile",
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./"
+    "watch": "tsc -watch -p ./",
+	"goorm:build": "npm run compile && webpack -c webpack.config.goorm.js"
   },
   "devDependencies": {
-    "typescript": "3.9.6",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@purtuga/esm-webpack-plugin": "^1.5.0",
+    "@types/node": "^14.0.14",
     "@types/vscode": "^1.45.0",
-    "@types/node": "^14.0.14"
-  }
+    "babel-loader": "^8.1.0",
+    "typescript": "3.9.6",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^4.2.0"
+  },
+  "goorm": "./index.js"
 }
